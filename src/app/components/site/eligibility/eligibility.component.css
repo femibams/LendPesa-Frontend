@@ -1,0 +1,20 @@
+.bottom-line {
+    border-bottom: 1px solid #f1f4f8;
+}
+
+.form-top-margin {
+    margin-top: 20px;
+}
+
+.input-range {
+    width: 100%;
+}
+
+.eligibility-card-header {
+    margin-left: 18%;
+    padding: 0.8125rem 4.25rem;
+}
+
+.button-span {
+    padding-left: 10px;
+}

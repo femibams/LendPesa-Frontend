@@ -24,9 +24,40 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "src/assets/css/theme.css",
+              "src/assets/fonts/Feather/feather.css",
+              "src/assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.css",
+              "src/assets/libs/aos/dist/aos.css",
+              "src/assets/libs/choices.js/public/assets/styles/choices.min.css",
+              "src/assets/libs/flickity-fade/flickity-fade.css",
+              "src/assets/libs/flickity/dist/flickity.min.css",
+              "src/assets/libs/highlightjs/styles/vs2015.css",
+              "src/assets/libs/jarallax/dist/jarallax.css",
+              "src/assets/libs/quill/dist/quill.core.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/theme.min.js",
+              "src/assets/libs/jquery/dist/jquery.min.js",
+              "src/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "src/assets/libs/@fancyapps/fancybox/dist/jquery.fancybox.min.js",
+              "src/assets/libs/aos/dist/aos.js",
+              "src/assets/libs/choices.js/public/assets/scripts/choices.min.js",
+              "src/assets/libs/countup.js/dist/countUp.min.js",
+              "src/assets/libs/dropzone/dist/min/dropzone.min.js",
+              "src/assets/libs/flickity/dist/flickity.pkgd.min.js",
+              "src/assets/libs/flickity-fade/flickity-fade.js",
+              "src/assets/libs/highlightjs/highlight.pack.min.js",
+              "src/assets/libs/imagesloaded/imagesloaded.pkgd.min.js",
+              "src/assets/libs/isotope-layout/dist/isotope.pkgd.min.js",
+              "src/assets/libs/jarallax/dist/jarallax.min.js",
+              "src/assets/libs/jarallax/dist/jarallax-video.min.js",
+              "src/assets/libs/jarallax/dist/jarallax-element.min.js",
+              "src/assets/libs/quill/dist/quill.min.js",
+              "src/assets/libs/smooth-scroll/dist/smooth-scroll.min.js",
+              "src/assets/libs/typed.js/lib/typed.min.js"
+            ]
           },
           "configurations": {
             "production": {

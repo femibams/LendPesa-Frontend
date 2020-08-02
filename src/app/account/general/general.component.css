@@ -1,0 +1,23 @@
+.bottom-line {
+    border-bottom: 1px solid #333;
+    padding-bottom: 15px;
+}
+
+.form-top-margin {
+    margin-top: 50px;
+}
+
+.thead-custom {
+    background-color: #eaecef;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    /* padding: 20px;
+    border: 2px solid red; */
+} 
+
+.table td, .table th {
+    padding: 1.5rem 1rem;
+}

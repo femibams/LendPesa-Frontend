@@ -1,0 +1,23 @@
+.bottom-line {
+    border-bottom: 1px solid #333;
+}
+
+.form-top-margin {
+    margin-top: 50px;
+}
+
+.input-range {
+    width: 100%;
+}
+
+.button-span {
+    padding-left: 10px;
+}
+
+.form-check-label {
+    font-size: large;
+}
+
+.form-check-inline {
+    margin-right: 4rem;
+}
