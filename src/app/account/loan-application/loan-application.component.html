@@ -1,322 +1,424 @@
-<!-- <div class="col-12 col-md-9"> -->
+<!-- Card -->
+<div class="card card-bleed shadow-light-lg mb-6" style="
+background-color: #37466b;
+">
+    <div class="card-header">
+
+        <div class="row ">
+            <div class="col-12">
+              <!-- Headin -->
+              <!-- <h1 class="display-2 font-weight-bold text-white">
+                Our Work.
+              </h1> -->
   
-    <!-- Card -->
-    <div class="card card-bleed shadow-light-lg mb-6">
-        <div class="card-header">
+              <!-- Text -->
+              <!-- <p class="lead text-white-75 mb-4">
+                We design & build products, tools, apps, and sites for companies trying to do great things for our planet.
+              </p> -->
   
-          <!-- Heading -->
-          <h4 class="mb-0">
-            Loan Overview
-          </h4>
-  
-        </div>
-        <div class="card-body">
-  
-          <!-- Form -->
-          <form>
-            <div class="row bottom-line">
-              <div class="col-12 col-md-4">
-  
-                <!-- Loan Amount -->
-                <div class="form-group">
-                  <label for="email">Loan Amount</label>
-                  <input class="form-control" id="name" type="text" placeholder="">
+              <!-- Badges -->
+              <nav class="nav ">
+                <div
+                  *ngFor="let div of divs"
+                  class="badge badge-pill badge-white-soft mr-1 mb-1"
+                  [class.active]="div.status"
+                >
+                  <span class="h6 text-uppercase" *ngIf="div.id == 0">{{div.name}}</span>
+                  <span class="h6 text-uppercase" *ngIf="div.id != 0">{{div.id}}. {{div.name}}</span>
                 </div>
-  
-              </div>
-              <div class="col-12 col-md-4">
-  
-                <!-- Tenor -->
-                <div class="form-group">
-                  <label for="email">Tenor </label>
-                  <input class="form-control" id="email" type="text" placeholder="">
-                </div>
-  
-              </div>
-              <div class="col-12 col-md-4">
-  
-                  <!-- Interest Rate -->
-                  <div class="form-group">
-                    <label for="email">Interest Rate</label>
-                    <input class="form-control" id="email" type="number" placeholder="Tenor" value="10">
-                  </div>
-    
-              </div>
-              <div class="col-12 col-md-auto">
-  
-                <!-- Button -->
-                <button class="btn btn-block btn-primary" type="submit">
-                 Search<i class="fe fe-search d-none d-md-inline ml-3"></i>
-                </button>
-  
-              </div>
+              </nav>
             </div>
-          </form>
-  
-          <table class="table table-bordered form-top-margin">
-              <thead class="thead-custom">
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Provider</th>
-                  <th scope="col">Product Overview</th>
-                  <th scope="col">Matching %</th>
-                  <th scope="col">Recommendation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">
-                      <input type="checkbox">
-                  </th>
-                  <td>Access Bank</td>
-                  <td>Loan product for bank</td>
-                  <td class="">
-                      <div class="progress ">
-                          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="rating ">
-                          <ngb-rating [rate]="3"></ngb-rating>
-                      </div>
-                  </td>
-                  <td>
-                      <a href="">reviews</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                      <input type="checkbox">
-                  </th>
-                  <td>UBA</td>
-                  <td>Loan product for bank</td>
-                  <td class="">
-                      <div class="progress ">
-                          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="rating ">
-                          <ngb-rating [rate]="3"></ngb-rating>
-                      </div>
-                  </td>
-                  <td>
-                      <a href="">reviews</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                      <input type="checkbox">
-                  </th>
-                  <td>Union</td>
-                  <td>Loan product for bank</td>
-                  <td class="">
-                      <div class="progress ">
-                          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="rating ">
-                          <ngb-rating [rate]="3"></ngb-rating>
-                      </div>
-                  </td>
-                  <td>
-                      <a href="">reviews</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">
-                      <input type="checkbox">
-                  </th>
-                  <td>GTB</td>
-                  <td>Loan product for bank</td>
-                  <td class="">
-                      <div class="progress ">
-                          <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="rating ">
-                          <ngb-rating [rate]="3"></ngb-rating>
-                      </div>
-                  </td>
-                  <td>
-                      <a href="">reviews</a>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-  
-          <div class="row">
-              <div class="col-12 col-md-10">
-                  <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
-                        Tinokunda and Bluegrouse Finance may use my personal details for a credit bureau enquiry<span style="color: red;">*</span>
-                      </label>
+          </div>
+          <!-- / .row -->
+
+    </div>
+</div>
+
+
+
+<!-- Card -->
+<div *ngIf="divs[0].status" class="card card-bleed shadow-light-lg mb-6">
+    
+    <div class="card-body">
+
+        <!-- Form -->
+        <form>
+            <div class="row bottom-line">
+                <div class="col-12 col-md-4">
+
+                    <!-- Loan Amount -->
+                    <div class="form-group">
+                        <label for="email">Loan Amount</label>
+                        <input class="form-control" id="name" type="text" placeholder="">
                     </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
+
+                </div>
+                <div class="col-12 col-md-4">
+
+                    <!-- Tenor -->
+                    <div class="form-group">
+                        <label for="email">Tenor </label>
+                        <input class="form-control" id="email" type="text" placeholder="">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-4">
+
+                    <!-- Interest Rate -->
+                    <div class="form-group">
+                        <label for="email">Interest Rate</label>
+                        <input class="form-control" id="email" type="number" placeholder="Tenor" value="10">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-auto">
+
+                    <!-- Button -->
+                    <button (click)="searchLoan()" class="btn btn-block btn-primary" type="submit">
+                        Search<i class="fe fe-search d-none d-md-inline ml-3"></i>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+
+        <div *ngIf="loanResultDiv">
+            <div 
+                *ngFor="let loanOption of loanOptionsResult; let i=index"
+                [class.active]="loanOption.selected"
+                class="row loan-product-row no-gutters bottom-line form-top-margin hover"
+            >
+                <div class="col-12">
+                
+                <!-- Badge -->
+                <span class="badge badge-pill badge-gray-600 badge-float badge-float-outside">
+                    <span class="h6 text-uppercase">Featured</span>
+                </span>
+        
+                </div>
+                <!-- <a class="col-12 col-md-6 bg-cover card-img-left" style="background-image: url({{loanOption.image_url}});"> -->
+                <div class="col-12 col-md-6 bg-cover card-img-left">
+                    <!-- Image (placeholder) -->
+                    <img src="{{loanOption.image_url}}" alt="..." class="img-fluid ">
+                </div>
+                
+        
+                <!-- Shape -->
+                <!-- <div class="shape shape-fluid-y svg-shim text-white d-none d-md-block">
+                    <svg viewBox="0 0 112 690" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M116 0H51v172C76 384 0 517 0 517v173h116V0z" fill="currentColor"/></svg>
+                </div> -->
+        
+                <!-- </a> -->
+                <div class="col-12 col-md-6">
+        
+                <!-- Body -->
+                <a class="card-body" style="padding: 0px 20px;">
+        
+                    <!-- Heading -->
+                    <h3 style="font-weight: 800 !important; color: #335eea;">
+                    {{loanOption.providerName}}
+                    <span class="rating" style="font-size: 1.0rem;">
+                        <ngb-rating [rate]="loanOption.rating"></ngb-rating>
+                    </span>
+                    </h3>
+        
+                    <!-- Text -->
+                    <p class="mb-0 text-muted" style="font-size: 0.9625rem;">
+                        {{loanOption.productOverview}}
+                    </p>
+
+                    <!-- Text -->
+                    <!-- <p class="mb-0 text-muted"> -->
+                        <div class="progress" style="height: 0.6rem; margin-top: 9px;">
+                            <div class="progress-bar" role="progressbar" style="width: {{loanOption.matchingPercentage}}%" aria-valuenow="{{loanOption.matchingPercentage}}" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        
+                    <!-- </p> -->
+        
+                </a>
+        
+                <!-- Meta -->
+                <a class="card-meta">
+        
+                    <!-- Divider -->
+                    <!-- <hr class="card-meta-divider"> -->
+        
+                    <!-- Avatar -->
+                    <!-- <div class="avatar avatar-sm mr-2">
+                    <img src="assets/img/avatars/avatar-2.jpg" alt="..." class="avatar-img rounded-circle">
+                    </div> -->
+                    
+                    <!-- Author -->
+                    <!-- <h6 class="text-uppercase text-muted mr-2 mb-0">
+                    Adolfo Hess
+                    </h6> -->
+                    
+                    <!-- Date -->
+                    <p class="h6 text-uppercase text-muted mb-0 ml-auto">
+                    <button (click)="selectLoanOption(i)" [class.active]="loanOption.selected" class="btn btn-outline-primary btn-sm">Select</button>
+                    </p>
+        
+                </a>
+        
+                </div>
+        
+            </div>
+        </div>
+        
+
+        <!-- <table class="table table-bordered form-top-margin">
+            <thead class="thead-custom">
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Provider</th>
+                    <th scope="col">Product Overview</th>
+                    <th scope="col">Matching %</th>
+                    <th scope="col">Recommendation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>Access Bank</td>
+                    <td>Loan product for bank</td>
+                    <td class="">
+                        <div class="progress ">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="rating ">
+                            <ngb-rating [rate]="3"></ngb-rating>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="">reviews</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>UBA</td>
+                    <td>Loan product for bank</td>
+                    <td class="">
+                        <div class="progress ">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="rating ">
+                            <ngb-rating [rate]="3"></ngb-rating>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="">reviews</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>Union</td>
+                    <td>Loan product for bank</td>
+                    <td class="">
+                        <div class="progress ">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="rating ">
+                            <ngb-rating [rate]="3"></ngb-rating>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="">reviews</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <input type="checkbox">
+                    </th>
+                    <td>GTB</td>
+                    <td>Loan product for bank</td>
+                    <td class="">
+                        <div class="progress ">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <div class="rating ">
+                            <ngb-rating [rate]="3"></ngb-rating>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="">reviews</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <div class="row form-top-margin">
+            <div class="col-12 col-md-10">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Tinokunda and LendPesa may use my personal details for a credit bureau enquiry<span style="color: red;">*</span>
+                      </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
                         Tinokunda and or its partners may contact me for marketing and promotioms purposes<span style="color: red;">*</span>
                       </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                      <label class="form-check-label" for="defaultCheck1">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
                         I accept the <a href="#">terms of use</a><span style="color: red;">*</span>
                       </label>
-                    </div>
-              </div>
-              <div class="col-12 col-md-auto">
-  
-                  <!-- Button -->
-                  <button class="btn btn-xs btn-block btn-primary mt-5 mt-md-0">
+                </div>
+            </div>
+            <div class="col-12 col-md-auto">
+
+                <!-- Button -->
+                <button (click)="applyForLoan(divs[0].id)" class="btn btn-xs btn-block btn-primary mt-5 mt-md-0">
                     Apply
                   </button>
-  
-                </div>
-          </div>
-  
+
+            </div>
         </div>
-      </div>
 
-      
-  
-    <!-- </div> -->
-      
+    </div>
+</div>
+<!-- </div> -->
 
 
-    <!-- Card -->
-    <div class="card card-bleed shadow-light-lg mb-6">
-        <div class="card-header">
-  
-          <!-- Heading -->
-          <h4 class="mb-0">
-            Loan Overview
-          </h4>
-  
-        </div>
-        <div class="card-body">
-  
-          <!-- Form -->
-          <form>
+<!-- Card -->
+<div *ngIf="divs[1].status" class="card card-bleed shadow-light-lg mb-6">
+   
+    <div class="card-body">
+
+        <!-- Form -->
+        <form>
             <div class="row bottom-line">
-              <div class="col-12 col-md-6">
-  
-                <!-- Employer Name -->
-                <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Employer Name">
+                <div class="col-12 col-md-6">
+
+                    <!-- Employer Name -->
+                    <div class="form-group">
+                        <input class="form-control" id="name" type="text" placeholder="Employer Name">
+                    </div>
+
                 </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Employment Date -->
-                <div class="form-group">
-                  <input class="form-control" id="email" type="text" placeholder="Employment Date">
+                <div class="col-12 col-md-6">
+
+                    <!-- Employment Date -->
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="text" placeholder="Employment Date">
+                    </div>
+
                 </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Employment Type -->
-                <div class="form-group">
-                  <select class="form-control">
+                <div class="col-12 col-md-6">
+
+                    <!-- Employment Type -->
+                    <div class="form-group">
+                        <select class="form-control">
                     <option>Employment Type</option>
                     <option>Full Time</option>
                     <option>Part Time</option>
                     <option>Contract</option>
                   </select>
-                </div>
+                    </div>
 
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Branch -->
-                <div class="form-group">
-                  <input class="form-control" id="name" type="text" placeholder="Branch / Subsidiary">
                 </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Employment Email -->
-                <div class="form-group">
-                  <input class="form-control" id="email" type="email" placeholder="Employment Email">
-                </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Employment Phone -->
-                <div class="form-group">
-                  <input class="form-control" id="email" type="text" placeholder="Employment Phone">
-                </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- industry -->
-                <div class="form-group">
-                  <select class="form-control">
-                    <option>Industry</option>
-                    <option>Manufacturing</option>
-                    <option>Technology</option>
-                    <option>Health</option>
-                  </select>
-                </div>
+                <div class="col-12 col-md-6">
 
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Occupation -->
-                <div class="form-group">
-                  <select class="form-control">
+                    <!-- Branch -->
+                    <div class="form-group">
+                        <input class="form-control" id="name" type="text" placeholder="Branch / Subsidiary">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Employment Email -->
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="email" placeholder="Employment Email">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Employment Phone -->
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="text" placeholder="Employment Phone">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- industry -->
+                    <div class="form-group">
+                        <select class="form-control">
+                            <option>Industry</option>
+                            <option>Manufacturing</option>
+                            <option>Technology</option>
+                            <option>Health</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Occupation -->
+                    <div class="form-group">
+                        <select class="form-control">
                     <option>Occupation</option>
                     <option>Manufacturing</option>
                     <option>Technology</option>
                     <option>Health</option>
                   </select>
-                </div>
+                    </div>
 
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Net Income -->
-                <div class="form-group">
-                  <input class="form-control" id="email" type="number" placeholder="Net Income">
                 </div>
-  
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <!-- Highest Qualification -->
-                <div class="form-group">
-                  <select class="form-control">
+                <div class="col-12 col-md-6">
+
+                    <!-- Net Income -->
+                    <div class="form-group">
+                        <input class="form-control" id="email" type="number" placeholder="Net Income">
+                    </div>
+
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <!-- Highest Qualification -->
+                    <div class="form-group">
+                        <select class="form-control">
                     <option>Highest Qualification</option>
                     <option>Phd</option>
                     <option>Masters'</option>
                     <option>Bsc</option>
                   </select>
-                </div>
+                    </div>
 
-              </div>
-              <div class="col-12 col-md-6">
-  
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">
+                </div>
+                <div class="col-12 col-md-6">
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">
                       Monthly
                     </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
                       Fortnightly
                     </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
                       Weekly
                     </label>
+                    </div>
+
                 </div>
 
-              </div>
-              
             </div>
             <div class="row form-top-margin bottom-line">
                 <div class="col-12 col-md-4">
@@ -329,21 +431,20 @@
                         <input type="file" class="custom-file-input" id="validatedCustomFile" required>
                         <label class="custom-file-label" for="validatedCustomFile">Upload</label>
                     </div>
-                    
+
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="Expiry Date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
+
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <button type="button" class="btn btn-secondary-soft">Proof of Address</button>
@@ -358,19 +459,18 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="Expiry Date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <button type="button" class="btn btn-secondary-soft btn-block button-width">Employment Contract</button>
+                        <button type="button" class="btn btn-secondary-soft btn-block button-width btn-adjust">Employment Contract</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 custom-file">
@@ -382,8 +482,7 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="Expiry Date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
                             </div>
@@ -393,7 +492,7 @@
 
                 <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <button type="button" class="btn btn-secondary-soft btn-block button-width">3 Months Pay Slip</button>
+                        <button type="button" class="btn btn-secondary-soft btn-block button-width btn-adjust">3 Months Pay Slip</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 custom-file">
@@ -405,8 +504,7 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="Expiry Date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
                             </div>
@@ -416,7 +514,7 @@
 
                 <div class="col-12 col-md-4">
                     <div class="form-group">
-                        <button type="button" class="btn btn-secondary-soft btn-block button-width">3 months Bank Statement</button>
+                        <button type="button" class="btn btn-secondary-soft btn-block button-width btn-adjust">3 months Bank Statement</button>
                     </div>
                 </div>
                 <div class="col-12 col-md-4 custom-file">
@@ -428,8 +526,7 @@
                 <div class="col-12 col-md-4">
                     <div class="form-group">
                         <div class="input-group">
-                            <input class="form-control" placeholder="yyyy-mm-dd"
-                                name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="Expiry Date" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
                             </div>
@@ -439,27 +536,355 @@
             </div>
             <div class="row form-top-margin">
                 <div class="col-12 col-md-3 ">
-  
+
                     <!-- Button -->
                     <p>
-                        <button class="btn btn-block btn-primary" type="submit">
+                        <button (click)="prev(divs[1].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
                             Previous Step
                           </button>
                     </p>
-                    
+
 
                 </div>
                 <div class="col-12 col-md-3 offset-md-6">
-  
+
                     <!-- Button -->
-                    <button class="btn btn-block btn-primary" type="submit">
+                    <button (click)="piSubmit(divs[1].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
                       Submit 
                     </button>
 
                 </div>
             </div>
-          </form>
-  
-          
-        </div>
+        </form>
+
+
     </div>
+</div>
+
+<!-- Card -->
+<div *ngIf="divs[2].status" class="card card-bleed shadow-light-lg mb-6">
+
+    <div class="card-body">
+
+        <!-- Form -->
+        <form>
+            <div class="row">
+                <div class="col-12 col-md-7">
+                    <!-- Month Income -->
+                    <div class="form-group">
+                        <label style="font-weight: 600;" for="email">MONTHLY INCOME</label>
+                        <input class="form-control" id="name" type="text" placeholder="R 25,000.00" disabled>
+                    </div>
+                </div>
+            </div>
+            <div class="row bottom-line">
+                <div class="col-12 col-md-6">
+                    <!-- Other Income -->
+                    <div class="form-group">
+                        <label for="email">Other Income</label>
+                        <input class="form-control" id="name" type="text" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 bottom-line">
+                <div class="col-12 col-md-6">
+                    <h2>LOANS</h2>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Personal</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Student</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Credit Card</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Other</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">SubTotal</label>
+                            <input class="form-control" id="name" type="text" placeholder="R6,700" disabled>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly liabilities -->
+                <div class="col-12 col-md-6">
+                    <h2>MONTHLY LIABILITIES</h2>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Home Loan Monthly Repayment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Vehicle Loan Monthly Repayment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Personal Loan Monthly Repayment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Student Loan Monthly Repayment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Credit card Monthly Repayment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Other Monthly Repayments</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">SubTotal</label>
+                            <input class="form-control" id="name" type="text" placeholder="R7,760" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-top-margin">
+                <div class="col-12 col-md-3 ">
+
+                    <!-- Button -->
+                    <p>
+                        <button (click)="prev(divs[2].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
+                            Previous Step
+                          </button>
+                    </p>
+
+
+                </div>
+                <div class="col-12 col-md-3 offset-md-6">
+
+                    <!-- Button -->
+                    <button (click)="financialInfoSubmit(divs[2].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
+                      Submit 
+                    </button>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+<!-- </div> -->
+
+<!-- Card -->
+<div *ngIf="divs[3].status" class="card card-bleed shadow-light-lg mb-6">
+
+    <div class="card-body">
+
+        <!-- Form -->
+        <form>
+            <div class="row bottom-line mt-5">
+                <div class="col-12 col-md-6">
+                    <h2>MONTHLY EXPENSES</h2>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Phone Call</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">CableTV/DSTV</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Utilities</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Wifi/Internet</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Vehicle Fuel</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Insurance</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Groceries</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Medical</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly liabilities -->
+                <div class="col-12 col-md-6">
+                    <h2 style="color: transparent;">MONTHLY LIABILITIES</h2>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Club Fees</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Gift and Donation</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Savings/Investments</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Personal Education</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Entertainment</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Legal Fees</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">School Fees</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Other Expenses</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">SubTotal</label>
+                            <input class="form-control" id="name" type="text" placeholder="R7,760" disabled>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row bottom-line mt-5">
+                <div class="col-12 col-md-6">
+                    <h2>ASSETS</h2>
+                    <div class="col-12 col-md-12">
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">House</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Vehicle</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">Furniture</label>
+                            <input class="form-control" id="name" type="text" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label style="font-weight: 600;" for="email">SubTotal</label>
+                            <input class="form-control" id="name" type="text" placeholder="R5,960" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <!-- <h2 style="color: transparent;">ASSETS</h2> -->
+                    <div style="margin-top: 100px;" class="col-12 col-md-12">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                            I herby confirm that the data captured is correct
+                          </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row form-top-margin">
+                <div class="col-12 col-md-3 ">
+
+                    <!-- Button -->
+                    <p>
+                        <button (click)="prev(divs[3].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
+                            Previous Step
+                          </button>
+                    </p>
+
+
+                </div>
+                <div class="col-12 col-md-3 offset-md-6">
+
+                    <!-- Button -->
+                    <button (click)="financialInfo2Submit(divs[3].id)" style="width: 150px;" class="btn btn-block btn-primary" type="submit">
+                      Submit 
+                    </button>
+
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<!-- </div> -->
+
+<!-- Card -->
+<div *ngIf="divs[4].status" class="card card-bleed shadow-light-lg mb-6">
+    <div class="card-header">
+
+        <!-- Heading -->
+        <h1 class="mb-0">
+            Confirmation
+        </h1>
+
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <!-- Text -->
+                <p class="font-size-lg text-gray-800 mb-6">
+                    Dear Oluwafemi,
+                </p>
+
+                <!-- Divider -->
+                <!-- <hr class="my-6 my-md-8"> -->
+
+                <!-- Text -->
+                <p class="font-size-lg text-gray-800 mb-6">
+                    We have received your loan application and we will update you on the progress as soon as possible.
+                </p>
+
+                <!-- Text -->
+                <p class="font-size-lg text-gray-800 mb-6">
+                    Thank you for applying. Reference Number: 74847694. 
+                </p>
+
+                <!-- Text -->
+                <p class="font-size-lg text-gray-800 mb-6">
+                    Please use this reference no: 74847694 to communicate with LendPesa (Call @: 086 999 0676). 
+                </p>
+
+                <!-- Text -->
+                <p class="font-size-lg text-gray-800 mb-6">
+                    Please click on the complete button. 
+                </p>
+
+            </div>
+            <div class="col-12 col-md-3 ">
+
+                <!-- Button -->
+                <p>
+                    <button style="width: 150px;" class="btn btn-block btn-primary" type="submit">
+                        Complete
+                      </button>
+                </p>
+
+
+            </div>
+            
+          </div> <!-- / .row -->
+    </div>
+</div>
+<!-- </div> -->
