@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-eligibility',
@@ -7,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EligibilityComponent implements OnInit {
   active = 1
-
+  model: NgbDateStruct;
+  
   constructor() { }
 
   ngOnInit(): void {

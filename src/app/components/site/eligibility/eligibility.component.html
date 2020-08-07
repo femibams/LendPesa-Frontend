@@ -111,8 +111,14 @@
   
                         <!-- DOB -->
                         <div class="form-group">
-                          <input class="form-control" id="name" type="text" placeholder="Date of Birth">
+                            <div class="input-group">
+                                <input class="form-control" placeholder="Date Of Birth" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><span class="fe fe-calendar"></span></button>
+                                </div>
+                            </div>
                         </div>
+    
   
                       </div>
                       <div class="col-12 col-md-6">
