@@ -38,11 +38,11 @@
                   </h4> -->
                   <!-- Buttons -->
                     <div class="text-center text-md-left">
-                        <a  class="btn btn-light shadow lift eligibility-card-header">
-                            <input type="radio" name="category"> <span class="button-span">Personal</span>
+                        <a  class="btn btn-light shadow lift eligibility-card-header" (click)="userType(0)">
+                            <input type="radio" [(ngModel)]="user" [value]="0" name="category"> <span class="button-span">Personal</span>
                         </a>
-                        <a class="btn btn-light shadow lift eligibility-card-header">
-                            <input type="radio" name="category"><span class="button-span">Business</span>
+                        <a class="btn btn-light shadow lift eligibility-card-header" (click)="userType(1)">
+                            <input type="radio" [(ngModel)]="user" [value]="1" name="category"><span class="button-span">Business</span>
                         </a>
                         <!-- <a href="docs/index.html" class="btn btn-primary-soft lift">
                         Documentation
@@ -51,7 +51,7 @@
                   
   
                 </div>
-                <div class="card-body">
+                <div *ngIf="user === 0" class="card-body">
   
                   <!-- Form -->
                   <form>
@@ -68,11 +68,19 @@
                         </div>
                         <div class="col-12 col-md-6">
   
-                            <!-- Amount -->
-                            <div class="form-group">
-                                <input class="input-range" type="range" id="amount" value="10" name="amount" min="0" max="11">
-                                <label for="volume">Amount ( R )</label>
+                          <!-- Amount -->
+                          <div class="form-group">
+                            <label class="range-label" for="volume">Amount - <span style="color: #0375ff; font-weight: 700;">R{{personalLoanAnount | number}} </span></label>
+                            <div class="container">
+                              <div class="one">R1,000</div>
+                              <div class="two">
+                                <input class="input-range" type="range" [(ngModel)]="personalLoanAnount"  id="amount" value="{{personalLoanAnount}}" name="amount" min="1000" max="10000">
+                              </div>
+                              <div class="three">R10,000</div>
                             </div>
+                            <!-- <label for="volume"></label> -->
+                            
+                          </div>
       
                         </div>
                     </div>
@@ -90,11 +98,19 @@
 
                         <div class="col-12 col-md-6">
   
-                            <!-- Amount -->
+                            <!-- Tenor -->
                             <div class="form-group">
-                                <input class="input-range" type="range" id="month" name="month" min="0" max="11">
-                                <label for="volume">Tenor ( Months )</label>
+                              <label class="range-label" for="volume">Tenor (Months) - <span style="color: #0375ff; font-weight: 700;">{{personalLoanTenor | number}} </span></label>
+                              <div class="container">
+                                <div class="one">1</div>
+                                <div class="two">
+                                  <input class="input-range" type="range" [(ngModel)]="personalLoanTenor"  id="tenor" value="{{personalLoanTenor}}" name="tenor" min="1" max="12">
+                                </div>
+                                <div class="three">12</div>
+                              </div>
+                              
                             </div>
+  
       
                         </div>
                     </div>
@@ -134,6 +150,117 @@
                         <!-- Email -->
                         <div class="form-group">
                           <input class="form-control" id="email" type="Email Address" placeholder="Email Address">
+                        </div>
+  
+                      </div>
+                      
+                      <div class="col-md-3 col-sm-12 offset-md-9">
+  
+                        <!-- Button -->
+                        <button class="btn btn-block btn-primary" type="submit">
+                          Check Eligibility
+                        </button>
+  
+                      </div>
+                    </div>
+
+                  </form>
+  
+                </div>
+                <div *ngIf="user === 1" class="card-body">
+  
+                  <!-- Form -->
+                  <form>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+  
+                            <!-- Loan purpose -->
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option>Loan Purpose</option>
+                              </select>
+                            </div>
+      
+                        </div>
+                        <div class="col-12 col-md-6">
+  
+                            <!-- Amount -->
+                          <div class="form-group">
+                            <label class="range-label" for="volume">Amount - <span style="color: #0375ff; font-weight: 700;">R{{businessLoanAnount | number}} </span></label>
+                            <div class="container">
+                              <div class="one">R1,000</div>
+                              <div class="two">
+                                <input class="input-range" type="range" [(ngModel)]="businessLoanAnount"  id="amount" value="{{businessLoanAnount}}" name="amount" min="1000" max="10000">
+                              </div>
+                              <div class="three">R100,000</div>
+                            </div>
+                            <!-- <label for="volume"></label> -->
+                            
+                          </div>
+      
+                        </div>
+                    </div>
+                    <div class="row bottom-line">
+                        <div class="col-12 col-md-6">
+  
+                            <!-- Employment Status -->
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option>Type of Company</option>
+                                <option>Limited</option>
+                                <option>Corporation</option>
+                              </select>
+                            </div>
+      
+                        </div>
+
+                        <div class="col-12 col-md-6">
+  
+                            <!-- Tenor -->
+                            <div class="form-group">
+                              <label class="range-label" for="volume">Tenor (Months) - <span style="color: #0375ff; font-weight: 700;">{{businessTenor | number}} </span></label>
+                              <div class="container">
+                                <div class="one">1</div>
+                                <div class="two">
+                                  <input class="input-range" type="range" [(ngModel)]="businessTenor"  id="tenor" value="{{businessTenor}}" name="tenor" min="1" max="12">
+                                </div>
+                                <div class="three">12</div>
+                              </div>
+                              
+                            </div>
+      
+                        </div>
+                    </div>
+                    <div class="row form-top-margin">
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Company Name -->
+                        <div class="form-group">
+                          <input class="form-control" id="name" type="text" placeholder="Company Name">
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Years in Business -->
+                        <div class="form-group">
+                          <input class="form-control" id="name" type="number" placeholder="Years in Business">
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Contact Name -->
+                        <div class="form-group">
+                          <input class="form-control" id="name" type="text" placeholder="Contact Name">
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Email -->
+                        <div class="form-group">
+                          <input class="form-control" id="email" type="Email Address" placeholder="Contact Email Address">
                         </div>
   
                       </div>
