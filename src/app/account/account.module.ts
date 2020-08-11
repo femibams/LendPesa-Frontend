@@ -7,10 +7,11 @@ import { AccountRoutingModule } from './account-routing.module';
 import { AccountComponent } from './account.component';
 import { GeneralComponent } from './general/general.component';
 import { LoanApplicationComponent } from './loan-application/loan-application.component';
+import { BusinessLoanApplicationComponent } from './business-loan-application/business-loan-application.component';
 
 
 @NgModule({
-  declarations: [AccountComponent, GeneralComponent, LoanApplicationComponent],
+  declarations: [AccountComponent, GeneralComponent, LoanApplicationComponent, BusinessLoanApplicationComponent],
   imports: [
     CommonModule,
     AccountRoutingModule,
