@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { filter } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-create-profile',
@@ -6,10 +9,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./create-profile.component.css']
 })
 export class CreateProfileComponent implements OnInit {
+  userType = "individual"
+  constructor(private route: ActivatedRoute) { }
 
-  constructor() { }
+  ngOnInit() {
+    this.route.queryParams
+      .pipe(
+        filter(params => params.userType)
+      )
+      .subscribe(params => {
+        console.log(params);
 
-  ngOnInit(): void {
+        this.userType = params.userType;
+      }
+    );
   }
 
 

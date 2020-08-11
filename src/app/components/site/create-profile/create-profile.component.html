@@ -42,7 +42,7 @@
                   
   
                 </div>
-                <div class="card-body">
+                <div *ngIf="userType=='individual'" class="card-body">
   
                   <!-- Form -->
                   <form>
@@ -230,6 +230,201 @@
                   </form>
   
                 </div>
+
+
+
+                
+
+
+
+
+
+
+                <!--
+                  ****************************************************************** BUSINESS FORM ******************************************************************
+                -->
+
+
+
+
+                
+
+                <div *ngIf="userType=='business'" class="card-body">
+  
+                  <!-- Form -->
+                  <form>
+                    
+                    <div class="row bottom-line form-top-margin">
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Business Name -->
+                        <div class="form-group">
+                          <input class="form-control" id="businessname" type="text" placeholder="Business Name" value="OpenFactor Technology" disabled>
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Registration No -->
+                        <div class="form-group">
+                          <input class="form-control" id="regno" type="text" placeholder="Registration No">
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Trading Name -->
+                        <div class="form-group">
+                          <input class="form-control" id="tname" type="text" placeholder="Trading Name">
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Year Incorporated -->
+                        <div class="form-group">
+                          <input class="form-control" id="year" type="text" placeholder="Year Incorporated" >
+                        </div>
+  
+                      </div>
+                      <div class="col-12 col-md-6">
+  
+                        <!-- Contact Name -->
+                        <div class="form-group">
+                          <input class="form-control" id="contactname" type="text" placeholder="Contact Name">
+                        </div>
+  
+                      </div>
+
+                      <div class="col-12 col-md-6">
+  
+                        <!-- contact phone -->
+                        <div class="form-group">
+                          <input class="form-control" id="phone" type="text" placeholder="Contact Work Phone">
+                        </div>
+  
+                      </div>
+                      
+                      <!-- <div class="col-md-3 col-sm-12 offset-md-9">
+  
+                        <button class="btn btn-block btn-primary" type="submit">
+                          Check Eligibility
+                        </button>
+  
+                      </div> -->
+                    </div>
+
+
+
+                    <!--\\
+                    
+                    
+                    -->
+
+                    <div class="row bottom-line form-top-margin">
+                        
+                        <div class="col-12 col-md-6">
+                            <!-- Country -->
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option>Country</option>
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+    
+                          <!-- street name -->
+                          <div class="form-group">
+                            <input class="form-control" id="streetname" type="text" placeholder="Street Name">
+                          </div>
+    
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <!-- State -->
+                            <div class="form-group">
+                              <select class="form-control">
+                                <option>State / Province</option>
+                              </select>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                          <!-- house no -->
+                          <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Office Block">
+                          </div>
+                        </div>
+                        
+                        <div class="col-12 col-md-6">
+                          <!-- City -->
+                          <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="City">
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                          <!-- postcode -->
+                          <div class="form-group">
+                            <input class="form-control" id="bvn" type="text" placeholder="Post Code">
+                          </div>
+                        </div>
+                        
+                        <!-- <div class="col-md-3 col-sm-12 offset-md-9">
+    
+                          <button class="btn btn-block btn-primary" type="submit">
+                            Check Eligibility
+                          </button>
+    
+                        </div> -->
+                    </div>
+  
+
+
+                    <div class="row form-top-margin">
+                        
+                        <div class="col-12 col-md-6">
+                          <!-- password -->
+                          <div class="form-group">
+                            <input class="form-control" id="streetname" type="text" placeholder="Password">
+                          </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                          <!-- confirm password -->
+                          <div class="form-group">
+                            <input class="form-control" id="name" type="text" placeholder="Confirm Password">
+                          </div>
+                        </div>
+
+                        <!-- <div class="row"> -->
+                            <div class="col-12 col-md-6">
+                                <!--  re-captcha -->
+                                <re-captcha (resolved)="resolved($event)" 
+                                            name="recaptchaReactive" 
+                                            siteKey="6Lcj4LgZAAAAACK9hd9cLNwCdFCrC7g_fx1M22yx">  
+                                </re-captcha>
+                            </div>
+                            
+                            
+                            <div class="col-12 col-md-4">
+        
+                              <button class="btn btn-block btn-primary" type="submit">
+                                Create Business Profile
+                              </button>
+        
+                            </div>
+                        <!-- </div> -->
+                        
+                    </div>
+  
+
+                    
+                  </form>
+  
+                </div>
+
               </div>
   
             </div>
@@ -237,14 +432,6 @@
         </div> <!-- / .container -->
       </main>
   
-      <!-- CURVE
-      ================================================== -->
-      <!-- <div class="position-relative">
-        <div class="shape shape-bottom shape-fluid-x svg-shim text-dark">
-          <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 48h2880V0h-720C1442.5 52 720 0 720 0H0v48z" fill="currentColor"/></svg>
-        </div>
-      </div> -->
-
       
     <!-- CONTENT
     ================================================== -->
